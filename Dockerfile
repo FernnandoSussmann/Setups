@@ -6,6 +6,11 @@ RUN apt -qq install vim -y && \
 RUN apt -qq install tmux -y  && \
     echo "tmux" >> /root/.bashrc
 RUN chmod +x /bin/*
+
+RUN apt -qq install python3 python3-pip -y 
+RUN pip3 install xonsh &&\
+    echo "xonsh" >> /root/.bashrc
+
 WORKDIR /root
 
 VOLUME ./files /root/files
